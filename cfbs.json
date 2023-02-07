@@ -1,0 +1,16 @@
+{
+  "name": "etc-issue-content",
+  "description": "CFEngine build module to manage the content of /etc/issue.",
+  "type": "module-repo",
+  "provides": {
+    "etc-issue-content": {
+      "description": "CFEngine build module to manage the content of /etc/issue.",
+      "tags": ["management", "inventory"],
+      "version": "0.0.1",
+      "commit": "x",
+      "by": "https://github.com/nickanderson",
+      "repo": "https://github.com/nickanderson/cfengine-etc_issue_content"
+    }
+  },
+  "git": true
+}
