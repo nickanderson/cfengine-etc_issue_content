@@ -9,7 +9,12 @@
       "version": "0.0.1",
       "commit": "x",
       "by": "https://github.com/nickanderson",
-      "repo": "https://github.com/nickanderson/cfengine-etc_issue_content"
+      "repo": "https://github.com/nickanderson/cfengine-etc_issue_content",
+      "steps": [
+        "copy main.cf services/cfbs/modules/etc-issue-content/main.cf",
+        "bundles etc_issue_content:main",
+        "policy_files services/cfbs/modules/etc-issue-content/main.cf"
+      ]
     }
   },
   "git": true
