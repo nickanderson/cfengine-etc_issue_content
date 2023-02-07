@@ -1,0 +1,23 @@
+body file control
+{
+        namespace => "etc_issue_content";
+}
+bundle agent main
+{
+  vars:
+
+      "body"
+        string => "Access to this host is restricted.",
+        comment => "Default content for /etc/issue",
+        if => not( isvariable( "body" ) );
+
+      "inv_etc_issue"
+        string => readfile("/etc/issue", 1k),
+        meta => { "inventory", "attribute_name=/etc/issue content"},
+        if => fileexists( "/etc/issue" );
+
+  files:
+      "/etc/issue"
+        content => "$(body)";
+
+}

@@ -1,0 +1,7 @@
+CFEngine module to manage =/etc/issue=.
+
+* Inventory
+- =/etc/issue content= :: The first 1K of content from /etc/issue.
+
+* Configuration
+- =etc_issue_content:main.body= :: The desired content of =/etc/issue=.
