@@ -1,7 +1,16 @@
 CFEngine module to manage =/etc/issue=.
 
 * Inventory
-- =/etc/issue content= :: The first 1K of content from /etc/issue.
+
+- =/etc/issue content= :: The first 1K of content from =/etc/issue=.
 
 * Configuration
-- =etc_issue_content:main.body= :: The desired content of =/etc/issue=.
+
+- =etc_issue_content:main.body= :: The main section of desired content in =/etc/issue=. Defaults to "=Access to this host is restricted.=".
+- =etc_issue_content:main.footer= :: The top section of desired content in =/etc/issue=. Defaults to an empty string.
+- =etc_issue_content:main.header= :: The top section of desired content in =/etc/issue=. Defaults to an empty string.
+
+=etc_issue_content:main.header=,  =etc_issue_content:main.body= and =etc_issue_content:main.footer= are combined to construct the full content of =/etc/issue=.
+
+
+Note: So this module depends on the =etc-issue-access= module in order to maintain proper permissions.

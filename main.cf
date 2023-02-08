@@ -6,10 +6,21 @@ bundle agent main
 {
   vars:
 
+      "header"
+        string => "",
+        if => not( isvariable( "header" ) );
+
       "body"
         string => "Access to this host is restricted.",
         comment => "Default content for /etc/issue",
         if => not( isvariable( "body" ) );
+
+      "footer"
+        string => "",
+        if => not( isvariable( "footer" ) );
+
+      "content"
+        string => "$(header)$(body)$(footer)";
 
       "inv_etc_issue"
         string => readfile("/etc/issue", 1k),
@@ -18,6 +29,5 @@ bundle agent main
 
   files:
       "/etc/issue"
-        content => "$(body)";
-
+        content => "$(content)";
 }
