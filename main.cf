@@ -4,7 +4,12 @@ body file control
 }
 bundle agent main
 {
+  classes:
+      "_supported_platform"
+        not => "windows";
+
   vars:
+    _supported_platform::
       "header"
         string => "",
         if => not( isvariable( "header" ) );
@@ -27,6 +32,7 @@ bundle agent main
         if => fileexists( "/etc/issue" );
 
   files:
+    _supported_platform::
       "/etc/issue"
         content => "$(content)",
         perms => default:mog( "root", "root", "644" );
