@@ -12,9 +12,6 @@ CFEngine module to manage =/etc/issue=.
 
 =etc_issue_content:main.header=,  =etc_issue_content:main.body= and =etc_issue_content:main.footer= are combined to construct the full content of =/etc/issue=.
 
-
-Note: So this module depends on the =etc-issue-access= module in order to maintain proper permissions.
-
 ** Input
 
 This module takes =etc_issue_content:main.body= as input. This provides a convenient project default. Currently =etc_issue_content:main.footer= and =etc_issue_content:main.header= do not prompt for input, but are available for providing some flexible differentiation across the population of managed hosts.

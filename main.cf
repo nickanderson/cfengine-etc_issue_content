@@ -5,7 +5,6 @@ body file control
 bundle agent main
 {
   vars:
-
       "header"
         string => "",
         if => not( isvariable( "header" ) );
@@ -29,5 +28,6 @@ bundle agent main
 
   files:
       "/etc/issue"
-        content => "$(content)";
+        content => "$(content)",
+        perms => default:mog( "root", "root", "644" );
 }
